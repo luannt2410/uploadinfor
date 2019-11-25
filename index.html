@@ -36,36 +36,7 @@ div {
 </head>
 <body>
 
-<div>
-
- <!--  SINGLE FILE -->
-<form action="/uploadfile" enctype="multipart/form-data" method="POST"> 
-   <input type="file" name="myFile" />
-   <input type="submit" value="Upload a file"/>
-</form>
-
-
-
-<hr>
-
-<!-- MULTIPLE FILES -->
-
-<form action="/uploadmultiple"  enctype="multipart/form-data" method="POST">
-  Select multiple images: <input type="file" name="myFiles" multiple>
-  <input type="submit" value="Upload your photos"/>
-</form>
-
-<hr>
-
-<!--   PHOTO-->
-
-<form action="/uploadphoto" enctype="multipart/form-data" method="POST"> 
-  <input type="file" name="picture" accept="image/*" />
-  <input type="submit" value="Upload an Image"/>
-</form>
-
-
-</div>
+<h2>Upload file running on localhost:3000</h2>
 
 </body>
 </html>

@@ -18,10 +18,6 @@ const pool = mariadb.createPool({
 fs = require('fs-extra')
 app.use(bodyParser.urlencoded({ extended: true }))
 
-// const MongoClient = require('mongodb').MongoClient
-// ObjectId = require('mongodb').ObjectId
-
-// const myurl = 'mongodb://localhost:27017';
 
 
 var storage = multer.diskStorage({
@@ -35,13 +31,6 @@ var storage = multer.diskStorage({
 
 var upload = multer({ storage: storage })
 
-// MongoClient.connect(myurl, (err, client) => {
-//   if (err) return console.log(err)
-//   db = client.db('test') 
-//   app.listen(3000, () => {
-//     console.log('listening on 3000')
-//   })
-// })
 
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/index.html');
@@ -109,6 +98,9 @@ app.post('/uploadphoto', upload.single('picture'), (req, res) => {
         .catch(err => {
           //handle error
           console.log(err);
+          res.json({
+            'message': 'Image uploaded with same name, change name or choose other image.'
+          });
           conn.end();
         })
 
