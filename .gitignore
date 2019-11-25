@@ -1,0 +1,14 @@
+/**/target/
+/**/.idea/
+/**/*.iml
+/**/.gradle/
+/**/build/
+/**/bin/
+/**/.project
+/**/.classpath
+/**/.settings/
+/**/out/
+/**/node_modules/
+/**/uploads/
+
+*.log
